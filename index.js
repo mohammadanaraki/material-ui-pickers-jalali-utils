@@ -3,8 +3,10 @@
 var Moment = require('moment');
 var jMoment = require('moment-jalaali');
 var extendMoment = require('moment-range').extendMoment;
-
 var moment = extendMoment(Moment);
+
+jMoment.loadPersian({usePersianDigits: true , dialect:'persian-modern'})
+
 var symbolMap = {
   1: '۱',
   2: '۲',
@@ -191,11 +193,11 @@ Utils.prototype.getYearText = function getYearText(date) {
 };
 
 Utils.prototype.getDatePickerHeaderText = function getDatePickerHeaderText(date) {
-  return date.format('ddd, jMMM jD');
+  return date.format('ddd, jMMMM jD');
 };
 
 Utils.prototype.getDateTimePickerHeaderText = function getDateTimePickerHeaderText(date) {
-  return date.format('jMMM jD');
+  return date.format('jMMMM jD');
 };
 
 Utils.prototype.getDayText = function getDayText(date) {
